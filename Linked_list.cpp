@@ -6,20 +6,23 @@ using namespace std;
      int data;
      node* next;
  };
- //Creation of list class
- //List class contains implementation of linked list functionalities
- class List{
-     private:
-     node* head;    //private so that only constructor or member 
-     public:        //function can access
-     List(){        //Constructor for assigning head as NULL
-         head=NULL;
+ node* head=NULL;  //declaring head global so that it can be accessed from anywhere
+ void Insert_head(int d){
+     node* temp=new node;    //creation of a temporary node
+         temp->data=d;       //storing data in temporary node
+         if(head==NULL){     //check if list is blank
+             head=temp;            //f list is blank the temp node should be made haed
+             head->next=NULL;      
+         }
+         else{
+             temp->next=head;      //insertion of node at head
+             head=temp;
+         }
      }
- };
  int main(){
-     node* n1=new node;
-     n1->data=10;
-     n1->next=NULL;
-     cout<<n1->data<<" "<<n1->next;
+     Insert_head(5);
+     Insert_head(10);
+     Insert_head(15);
+     cout<<head->data<<" "<<head->next->data<<" "<<head->next->next->data<<" "<<head->next->next->next;
      return 0;
  }
