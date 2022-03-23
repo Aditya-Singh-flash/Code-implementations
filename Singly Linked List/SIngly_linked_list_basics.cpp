@@ -29,3 +29,9 @@ int main(){
      traverse(head);
     return 0;
 }
+
+/*
+Head node has been declared as global variable so that it can be accessed from anywhere and we do not 
+need to pass it as an argument every time we call a function. In case I declare it as a local variable
+or a private member within another cass, it will be required to be passed as an argument and also returned
+back by the function once the operation is performed*/
