@@ -1,13 +1,16 @@
 //This file only contains the main function
 //All the implementations are done in the header file attached
+//We have attached "reverse.h" only because the other file "Singly_linked_list_basics.h"
+//has been include in reverse file and if we again attach it here it will fail in compilation
+//saying class and functions have been defined twice because of double connectivity.
+
 
 #include<iostream>
-#include"Singly_linked_list_basics.h"   //we defined all the implementation in another file and included it as header file
+#include"reverse.h"    //we defined all the implementation in another file and included it as header file
 using namespace std;
 
 //main function
 int main(){
-    delete_pos(3);
     insert_head(5);
      insert_head(10);
      insert_head(15);
@@ -23,9 +26,10 @@ int main(){
      traverse(head);
      delete_pos(1);
      traverse(head);
-     traverse(head);
      insert_head(67);
      delete_pos(8);
+     traverse(head);
+     reverse();
      traverse(head);
     return 0;
 }
